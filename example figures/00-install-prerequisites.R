@@ -3,17 +3,18 @@
 # choose the install library - default to first user library
 install.lib <- sub(":.*$", "", Sys.getenv("R_LIBS_USER"))
 
-# create the install library if it does not already exist
+# create the install library directories if they do not already exist
 dir.create(path = install.lib, showWarnings = FALSE, recursive = TRUE)
 
 # edgeR is distributed through BioConductor - install it if necessary, then get edgeR
 # https://bioconductor.org/packages/release/bioc/html/edgeR.html
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager", lib = install.lib)
+library(BiocManager)
 BiocManager::install("edgeR", lib = install.lib)
 
 # Rmarkdown/knitr uses a TeX install
-install.packages('tinytex", lib = install.lib)
+install.packages("tinytex", lib = install.lib)
 tinytex::install_tinytex()
 # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
 
