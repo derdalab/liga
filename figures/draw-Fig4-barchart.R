@@ -43,7 +43,7 @@ q_indices <- c(0, cumsum(lapply(p_values, length)))
 grob_list = list()
 for(subpanel in 1:length(diff.tests)){
     output_df <- diff.tests[[subpanel]]
-    output_df$logFC <- -diff.tests[[subpanel]]$logFC
+    output_df$logFC <- diff.tests[[subpanel]]$logFC
     output_df$QValue <- q_values[(1+q_indices[subpanel]):q_indices[subpanel+1]]
     # estimates of relative noise - would probably be better to directly take
     # the means for this purpose rather than the log-transformed QL-fit values

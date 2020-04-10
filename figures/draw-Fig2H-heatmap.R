@@ -34,7 +34,7 @@ for(filenumber in 1:length(input_filename_list)){
         long.data,
         data.frame(Glycan.Rank = 1:NROW(data), Glycan.Label = file.data$sequence,
                    Case.Rank = filenumber, Case.Label = case.label,
-                   logFC =- file.data$logFC, PValue = file.data$PValue)
+                   logFC = file.data$logFC, PValue = file.data$PValue)
         )
 }
 
