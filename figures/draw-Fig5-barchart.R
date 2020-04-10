@@ -8,7 +8,7 @@ filename.pattern <- "Figure5.*"
 
 # set the output file
 # height and width are in inches, 7 inches is about a two-column figure width
-cairo_pdf(file = "Figure5-barchart.pdf", width = 5, height = 7)
+pdf(file = "Figure5-barchart.pdf", width = 5, height = 7)
 
 
 # # create an empty data frame to hold the data
