@@ -1,35 +1,39 @@
-############  Clears All Data  ############
-if(!is.null(dev.list())) dev.off() # Clear plots
-cat("\014") # Clear console
-rm(list=ls())# Clean workspace
-#############  Library  ##############
-if(!require(drc)){
-  install.packages("drc")
-  library(drc)
-}
-if(!require(tidyverse)){
-  install.packages("tidyverse")
-  library(tidyverse)
-}
-if(!require(stats)){
-  install.packages("stats")
-  library(stats)
-}
+library(drc)
+library(ggplot2)
+library(stats)
+# ############  Clears All Data  ############
+# if(!is.null(dev.list())) dev.off() # Clear plots
+# cat("\014") # Clear console
+# rm(list=ls())# Clean workspace
+# #############  Library  ##############
+# if(!require(drc)){
+#  install.packages("drc")
+#  library(drc)
+#}
+#if(!require(tidyverse)){
+#  install.packages("tidyverse")
+#  library(tidyverse)
+#}
+#if(!require(stats)){
+#  install.packages("stats")
+#  library(stats)
+#}
 #############  Data input  ##############
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 mydata<-read.csv("Gal3_Elisa.csv", header=T)
 head(mydata)
 
 #############  Data tidying  ##############
-Blocking_Phage<-filter(mydata, Type=="Blocking Phage")
-Man1<- filter(mydata, Type=="Man 1")
-LNT<-filter(mydata, Type=="LNT")
-fitMan1<-drm(formula=Mean~logconc, data=Man1, fct=LL.4())
-fitLNT<-drm(formula=Mean~logconc, data=LNT, fct=LL.4())
-fitBlocking_Phage<-drm(formula=Mean~logconc, data=Blocking_Phage, fct=LL.4())
-
+# extract subsets for the different phage-labels
+Blocking_Phage <- mydata[mydata$Type == "Blocking Phage", ]
+Man1           <- mydata[mydata$Type == "Man 1", ]
+LNT            <- mydata[mydata$Type == "LNT", ]
 
 #############  Data Fitting  ##############
+fitMan1           <- drm(formula=Mean~logconc, data=Man1, fct=LL.4())
+fitLNT            <- drm(formula=Mean~logconc, data=LNT, fct=LL.4())
+fitBlocking_Phage <- drm(formula=Mean~logconc, data=Blocking_Phage, fct=LL.4())
+
 plot(fitMan1, broken = TRUE, col = "#98063A", lwd=2)
 plot(fitLNT, broken = TRUE, add = T, col = "#FD823E", lwd=2)
 plot(fitBlocking_Phage, broken = TRUE, add = T, col = "#6C98C6", lwd=2)
