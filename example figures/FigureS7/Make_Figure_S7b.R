@@ -22,7 +22,7 @@ library(stats)
 #############  Data input  ##############
 #input the data
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-mydata<-read.csv("ConA_Elisa.csv", header=T)
+mydata<-read.csv("LiGA data for figures/ConA_Elisa.csv", header=T)
 head(mydata)
 
 # extract subsets for the different phage-labels
