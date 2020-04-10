@@ -10,7 +10,7 @@ fc.threshold.2 <- 3.8
 
 # set the output file
 # height and width are in inches, 7 in is about a two-column figure width
-cairo_pdf(file = "Figure2H-heatmap.pdf", width = 7, height = 4.325)
+pdf(file = "Figure2H-heatmap.pdf", width = 7, height = 4.325)
 
 
 # create an empty data frame to hold the data
