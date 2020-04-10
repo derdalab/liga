@@ -21,7 +21,7 @@ library(stats)
 #}
 #############  Data input  ##############
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-mydata<-read.csv("Gal3_Elisa.csv", header=T)
+mydata<-read.csv("LiGA data for figures/Gal3_Elisa.csv", header=T)
 head(mydata)
 
 #############  Data tidying  ##############
