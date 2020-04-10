@@ -1,6 +1,7 @@
 library(drc)
 library(ggplot2)
 library(stats)
+
 # ############  Clears All Data  ############
 # if(!is.null(dev.list())) dev.off() # Clear plots
 # cat("\014") # Clear console
@@ -19,7 +20,7 @@ library(stats)
 #  library(stats)
 #}
 #############  Data input  ##############
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 mydata<-read.csv("Gal3_Elisa.csv", header=T)
 head(mydata)
 
