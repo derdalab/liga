@@ -1,35 +1,40 @@
+library(drc)
+library(ggplot2)
+library(stats)
+
 ############  Clears All Data  ############
-if(!is.null(dev.list())) dev.off() # Clear plots
-cat("\014") # Clear console
-rm(list=ls())# Clean workspace
+#if(!is.null(dev.list())) dev.off() # Clear plots
+#cat("\014") # Clear console
+#rm(list=ls())# Clean workspace
 #############  Library  ##############
-if(!require(drc)){
-  install.packages("drc")
-  library(drc)
-}
-if(!require(tidyverse)){
-  install.packages("tidyverse")
-  library(tidyverse)
-}
-if(!require(stats)){
-  install.packages("stats")
-  library(stats)
-}
+#if(!require(drc)){
+#  install.packages("drc")
+#  library(drc)
+#}
+#if(!require(tidyverse)){
+#  install.packages("tidyverse")
+#  library(tidyverse)
+#}
+#if(!require(stats)){
+#  install.packages("stats")
+#  library(stats)
+#}
 #############  Data input  ##############
 #input the data
-#setwd("~/Dropbox/R/Elisa_Plotting")
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 mydata<-read.csv("ConA_Elisa.csv", header=T)
 head(mydata)
 
-man3<- filter(mydata, Type=="Man3")
-Blocking_Phage<-filter(mydata, Type=="Blocking Phage")
-Man1<- filter(mydata, Type=="Man 1")
-LNT<-filter(mydata, Type=="LNT")
-fitMan3<-drm(formula=Mean~logconc, data=man3, fct=LL.4())
-fitMan1<-drm(formula=Mean~logconc, data=Man1, fct=LL.4())
-fitLNT<-drm(formula=Mean~logconc, data=LNT, fct=LL.4())
-fitBlocking_Phage<-drm(formula=Mean~logconc, data=Blocking_Phage, fct=LL.4())
+# extract subsets for the different phage-labels
+man3           <- mydata[mydata$Type == "Man3", ]
+Blocking_Phage <- mydata[mydata$Type == "Blocking Phage", ]
+Man1           <- mydata[mydata$Type == "Man 1", ]
+LNT            <- mydata[mydata$Type == "LNT", ]
+
+fitMan3           <- drm(formula=Mean~logconc, data=man3, fct=LL.4())
+fitMan1           <- drm(formula=Mean~logconc, data=Man1, fct=LL.4())
+fitLNT            <- drm(formula=Mean~logconc, data=LNT, fct=LL.4())
+fitBlocking_Phage <- drm(formula=Mean~logconc, data=Blocking_Phage, fct=LL.4())
 
 
 plot(fitMan3, broken = TRUE, col="#0b245b", lwd=2) 
@@ -64,5 +69,3 @@ ConA<-ggplot() +
   theme(axis.text.x=element_text(size=12, face="bold"),
         axis.text.y=element_text(size=9, face="bold"))
 ConA
-
-
