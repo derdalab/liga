@@ -32,7 +32,7 @@ for(filenumber in 1:length(input_filename_list)){
     # append the data need for plotting to the long table
     long.data <- rbind(
         long.data,
-        data.frame(Glycan.Rank = 1:NROW(data), Glycan.Label = file.data$sequence,
+        data.frame(Glycan.Rank = 1:NROW(file.data), Glycan.Label = file.data$sequence,
                    Case.Rank = filenumber, Case.Label = case.label,
                    logFC = file.data$logFC, PValue = file.data$PValue)
         )
