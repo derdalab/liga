@@ -7,7 +7,7 @@ cd python_scripts
 python3 script_name.py
 ```
 
-Python scripts requirements:
+### Python scripts requirements:
 
 * pandas
 * numpy
