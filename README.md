@@ -1,13 +1,16 @@
 # LiGA Scripts
 
-Python scripts use:
+### Python script use:
 
 ```shell
 cd python_scripts
 python3 script_name.py
 ```
 
-### Python scripts requirements:
+'script_name' can be 'align_CFG', 'download_all_CFG' or 'draw_glycans'
+
+
+### Python script requirements:
 
 * pandas
 * numpy
