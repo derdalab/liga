@@ -1,4 +1,4 @@
-# R Scripts to generate figures
+# R Scripts
 
 ### R scripts dependecies:
 The R scripts in this folder may require additional packages to be installed on your system. 
