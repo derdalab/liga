@@ -5,7 +5,7 @@
 All the required dependent function are included in the current directory. Need to download all entire folder and sub-folders
 within 'maldi' folder for the script to works 
 
-For plotting maldi, use plotONEmaldi.m and fill in the values for the variables. An exmaple is given below:
+For plotting maldi, use plotONEmaldi.m and fill in the values for the variables. An example is given below:
 
 ```
 filename = '1.txt'; %Name of Maldi spectra file
