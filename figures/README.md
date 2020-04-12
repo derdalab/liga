@@ -6,5 +6,5 @@ The **"00-install-prerequisites.R"** will install necessary additional packages.
 
 
 ### Using the R Scripts:
-All script contained in currect folder and sub-folder should be downloaded together. 
+All script contained in currect folder and sub-folder(s) should be downloaded together. 
 Each R script generates the figure corresponding to its file name. 
