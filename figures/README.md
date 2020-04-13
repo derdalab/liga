@@ -5,7 +5,7 @@ The R scripts in this folder may require additional packages to be installed on 
 The **"00-install-prerequisites.R"** will install necessary additional packages (listed below). Read the script for specific details.
 
 Packages required:
-1.) edgeR
+1.) edgeR<br />
 2.) tinytex
 3.) rmarkdown
 4.) ggplot2
