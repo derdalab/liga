@@ -11,3 +11,7 @@ The folder contains Matlab scripts used to analyze MALDI-TOF spectra and spectra
 ### python_scripts
 
 The folder contains Python scripts used to download and analyze CFG (Consortium for Functional Glycomics) glass array data.
+
+### differential-testing
+
+Contains code to use edgeR to compare LiGA seqeunce abundances, including data for one example case.
