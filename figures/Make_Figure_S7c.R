@@ -1,5 +1,5 @@
 ###WARNING: Running the folling script will install packages "drc", "ggplot2", and "stats".
-#           Procceed with caution.
+#           Procceed with caution. This script uses Rstudio Api for setting working directory.
 
 
 ############  Clears All Data  ############
