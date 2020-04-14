@@ -7,8 +7,8 @@ The **"00-install-prerequisites.R"** will install necessary additional packages 
 Packages required: <br />
 1.) ggplot2 <br />
 2.) grid <br />
-2.) drc <br />
-3.) pbkrtest <br />
+3.) drc <br />
+4.) pbkrtest <br />
 
 ### Using the R Scripts:
 All script contained in currect folder and sub-folder(s) should be downloaded together. 
