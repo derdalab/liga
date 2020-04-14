@@ -1,28 +1,29 @@
-library(drc)
-library(ggplot2)
-library(stats)
+###WARNING: Running the folling script will install packages "drc", "ggplot2", and "stats".
+#           Procceed with caution.
+
 
 ############  Clears All Data  ############
-#if(!is.null(dev.list())) dev.off() # Clear plots
-#cat("\014") # Clear console
-#rm(list=ls())# Clean workspace
-#############  Library  ##############
-#if(!require(drc)){
-#  install.packages("drc")
-#  library(drc)
-#}
-#if(!require(tidyverse)){
-#  install.packages("tidyverse")
-#  library(tidyverse)
-#}
-#if(!require(stats)){
-#  install.packages("stats")
-#  library(stats)
-#}
+if(!is.null(dev.list())) dev.off() # Clear plots
+cat("\014") # Clear console
+rm(list=ls())# Clean workspace
+############  Library  ##############
+if(!require(drc)){
+  install.packages("drc")
+  library(drc)
+}
+if(!require(ggplot2)){
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+if(!require(stats)){
+  install.packages("stats")
+  library(stats)
+}
 #############  Data input  ##############
 #input the data
-#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-mydata<-read.csv("LiGA data for figures/ConA_Elisa.csv", header=T)
+
+setwd(paste(dirname(rstudioapi::getSourceEditorContext()$path),"/LiGA data for figures", sep=""))
+mydata<-read.csv("ConA_Elisa.csv", header=T)
 head(mydata)
 
 # extract subsets for the different phage-labels
