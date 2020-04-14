@@ -1,13 +1,13 @@
-# LiGA Scripts
+# Python Scripts
 
-### Python script use:
+### Script use:
 
 ```shell
 cd python_scripts
 python3 script_name.py
 ```
 
-### Python script requirements:
+### Python additional packages requirements:
 
 * pandas
 * numpy
