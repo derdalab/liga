@@ -2,7 +2,7 @@ library(rmarkdown)
 library(dplyr)
 library(stringr)
 
-LiGA_dir <- "LiGA-data"
+LiGA.data.dir <- "LiGA-data"
 dict_dir <- "dictionaries"
 order_table_dir <- "figure data tables/axes"
 campaign_dir <- "figure data tables/new requests"
@@ -218,7 +218,7 @@ for(i in 1:length(input_filename_list)){
         testing$ExcludedSDBs[is.na(testing$ExcludedSDBs)] <- ""
         testing$ExcludedSDBs <- lapply(strsplit(testing$ExcludedSDBs, ","), trimws)
 
-        testing_data <- read_and_merge_columns(testing, LiGA_dir = "~/LiGA-All-revised",
+        testing_data <- read_and_merge_columns(testing, LiGA_dir = LiGA.data.dir,
                 dict_dir = "dictionaries", order_table_dir = "figure data tables/axes")
 
         # Jessica's DE script does not allow NA row entries so delete them now
