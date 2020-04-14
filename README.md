@@ -6,7 +6,7 @@ The folder contains R scripts and associated data used to generate Fig.2H, Fig.3
 
 ### maldi
 
-The folder contains Matlab scripts used to analyze MALDI-TOF spectra. 
+The folder contains Matlab scripts used to analyze MALDI-TOF spectra and spectra data. 
 
 ### python_scripts
 
