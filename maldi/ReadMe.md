@@ -3,7 +3,7 @@
 ### plotONEmaldi.m dependecies 
 
 All the required dependent function are included in the current directory. Need to download all entire folder and sub-folders
-within 'maldi' folder for the script to works 
+within 'maldi' folder for the script to works. Curve Fitting Toolbox Add-in (https://www.mathworks.com/products/curvefitting.html) for Matlab is required. 
 
 For plotting maldi, use plotONEmaldi.m and fill in the values for the variables. An example is given below:
 
