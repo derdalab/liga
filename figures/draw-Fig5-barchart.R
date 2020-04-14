@@ -64,10 +64,9 @@ for(subpanel in 1:length(diff.tests)){
 
     bar_plot <- ggplot(data = plot_data,
                      aes(x = Label, y = Enrichment)) +
-            theme_light() + theme(text = element_text(family = "Arial"),
-                                  panel.grid.major.x = element_blank(),
+            theme_light() + theme(panel.grid.major.x = element_blank(),
                                   panel.grid.minor.y = element_blank()) +
-            labs(x = "Glycan", y = "Enrichment") +
+            labs(x = "Glycan", y = "Fold Change") +
             scale_y_sqrt(expand = expand_scale(mult = c(0, 0.08))) +
             geom_hline(yintercept = 1) + 
             geom_col(position = "dodge", colour = "black", size = 0.0,

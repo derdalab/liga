@@ -12,17 +12,17 @@ dir.create(path = install.lib, recursive = TRUE, showWarnings = FALSE)
 
 # edgeR is distributed through BioConductor - install it if necessary, then get edgeR
 # https://bioconductor.org/packages/release/bioc/html/edgeR.html
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager", lib = install.lib)
-if(!"edgeR" %in% installed.packages())
-    BiocManager::install("edgeR", lib = install.lib)
-
-# knitr/Rmarkdown, install it after tinytex (used of knitr PDF output)
-if(!"tinytex" %in% installed.packages())
-    install.packages("tinytex", lib = install.lib)
-tinytex::install_tinytex()  # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
-if(!"rmarkdown" %in% installed.packages())
-    install.packages("rmarkdown", lib = install.lib)    # used for report generation
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager", lib = install.lib)
+# if(!"edgeR" %in% installed.packages())
+#     BiocManager::install("edgeR", lib = install.lib)
+# 
+# # knitr/Rmarkdown, install it after tinytex (used of knitr PDF output)
+# if(!"tinytex" %in% installed.packages())
+#     install.packages("tinytex", lib = install.lib)
+# tinytex::install_tinytex()  # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
+# if(!"rmarkdown" %in% installed.packages())
+#     install.packages("rmarkdown", lib = install.lib)    # used for report generation
 
 # ggplot2 - widely used plot package
 if(!"ggplot2" %in% installed.packages())

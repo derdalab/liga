@@ -62,7 +62,7 @@ heatmap <- ggplot(long.data,
              aes(x = reorder(Glycan.Label, Glycan.Rank),
                  y = reorder(Case.Label, -Case.Rank))) +
   theme_light() +
-  theme(text = element_text(family = "Arial"), panel.grid = element_blank(),
+  theme(panel.grid = element_blank(),
         axis.ticks.x = element_blank(), panel.background = element_blank()) +
   coord_fixed() +
   geom_tile(aes(fill = 2^logFC), colour = "black", size = 0.2) +
