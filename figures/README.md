@@ -12,4 +12,4 @@ Packages required: <br />
 
 ### Using the R Scripts:
 All script contained in currect folder and sub-folder(s) should be downloaded together. 
-Each R script generates the figure corresponding to its file name. 
+Each R script generates a PDF in the parent directory with the figure corresponding to its file name. 
