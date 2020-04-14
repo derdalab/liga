@@ -1,0 +1,5 @@
+Type,Filename,Columns,Dictionary,Labels,ExcludedSDBs,OrderTable
+Test,20171003-87YGqgEV-SS,"1, 2",YG,Axis.name,"SDB3, SDB68, SDB69, SDB72, SDB77",CFG-Axis-Order
+Test,20171016-87YGqgZQ-SS,"1, 2",YG,Axis.name,"SDB3, SDB68, SDB69, SDB72, SDB77",CFG-Axis-Order
+Control,20171016-87YGsaEV-SS,"1, 2",YG,Axis.name,"SDB3, SDB68, SDB69, SDB72, SDB77",CFG-Axis-Order
+Control,20171016-87YGsaZQ-SS,"1, 2",YG,Axis.name,"SDB3, SDB68, SDB69, SDB72, SDB77",CFG-Axis-Order
