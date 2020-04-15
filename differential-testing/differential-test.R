@@ -83,7 +83,7 @@ read_dictionary_tables <- function(dictionary_basename, order_table_basename, la
 
 ### read dataframe listing datafiles, columns to select, and matching dictionary
 ### return a single merged table of the requested columns
-read_and_merge_columns <- function(input_columns, LiGA_dir = LiGA_dir,
+read_and_merge_columns <- function(input_columns, LiGA_dir = LiGA.data.dir,
         dict_dir = dict_dir, order_table_dir = order_table_dir) {
 
     # verify the inputs
@@ -219,7 +219,7 @@ for(i in 1:length(input_filename_list)){
         testing$ExcludedSDBs <- lapply(strsplit(testing$ExcludedSDBs, ","), trimws)
 
         testing_data <- read_and_merge_columns(testing, LiGA_dir = LiGA.data.dir,
-                dict_dir = "dictionaries", order_table_dir = "figure data tables/axes")
+                dict_dir = dict_dir, order_table_dir = order_table_dir)
 
         # Jessica's DE script does not allow NA row entries so delete them now
         # similarly only test and control columns are allowed
