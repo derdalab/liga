@@ -15,23 +15,26 @@ dir.create(path = install.lib, recursive = TRUE, showWarnings = FALSE)
 if (!requireNamespace("BiocManager", quietly = TRUE)){
     install.packages("BiocManager", lib = install.lib)
 }
-if(!"edgeR" %in% installed.packages()){
+if(!"edgeR" %in% installed.packages()[,"Package"]){
     BiocManager::install("edgeR", lib = install.lib)
 }
+if(!"statmod" %in% installed.packages()[,"Package"]){
+    install.packages("statmod", lib = install.lib)  # apparently edgeR may require statmod functions
+}
 # knitr/Rmarkdown, install it after tinytex (used of knitr PDF output)
-if(!"tinytex" %in% installed.packages()){
+if(!"tinytex" %in% installed.packages()[,"Package"]){
     install.packages("tinytex", lib = install.lib)
 }
 tinytex::install_tinytex()  # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
-if(!"rmarkdown" %in% installed.packages()){
+if(!"rmarkdown" %in% installed.packages()[,"Package"]){
     install.packages("rmarkdown", lib = install.lib)    # used for report generation
 }
 # ggplot2 - widely used plot package
-if(!"dplyr" %in% installed.packages()){
+if(!"dplyr" %in% installed.packages()[,"Package"]){
     install.packages("dplyr", lib = install.lib)      # common graphing package
 }
 # dose-response curve package
-if(!"stringr" %in% installed.packages()){
+if(!"stringr" %in% installed.packages()[,"Package"]){
     install.packages("stringr", lib = install.lib)
 }
 
