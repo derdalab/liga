@@ -6,14 +6,14 @@ The **"00-install-prerequisites.R"** in this folder will install necessary addit
 Read the script for specific details.
 
 ```
-Packages required: <br />
-1.) BiocManager <br />
-2.) edgeR <br />
-3.) statmod <br />
-4.) tinytex <br />
-5.) rmarkdown <br />
-6.) dplyr <br />
-7.) stringr <br />
+Packages required:
+1.) BiocManager
+2.) edgeR
+3.) statmod
+4.) tinytex
+5.) rmarkdown
+6.) dplyr
+7.) stringr
 ```
 
 ### Using the R Scripts:
