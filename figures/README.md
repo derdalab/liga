@@ -5,11 +5,11 @@ The R scripts in this folder may require additional packages to be installed on 
 The **"00-install-prerequisites.R"** will install necessary additional packages (listed below). Read the script for specific details.
 
 ```
-Packages required: <br />
-1.) ggplot2 <br />
-2.) grid <br />
-3.) drc <br />
-4.) pbkrtest <br />
+Packages required:
+1.) ggplot2
+2.) grid
+3.) drc
+4.) pbkrtest
 ```
 
 ### Using the R Scripts:
