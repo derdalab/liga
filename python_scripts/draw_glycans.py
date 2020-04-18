@@ -7,6 +7,8 @@ except:
     print('This file uses matlab.engine and DrawGlyacn SNFG.')
     print('Matlab installation is required for use.')
     exit()
+    
+os.makedirs('glycan_drawings', exist_ok = True)
 
 def draw(glycan, filename):
 
