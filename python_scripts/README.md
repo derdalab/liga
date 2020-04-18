@@ -17,7 +17,7 @@ python3 script_name.py
 
 ``IUPAC_converter.py`` is a library for converting CFG glycans to standard IUPAC.
 
-``draw_glycans.py`` uses DrawGlycan SNFG and Matlab to draw the glycans.
+``draw_glycans.py`` uses DrawGlycan SNFG and Matlab to glycans.
 
 ### Data inputs:
 
