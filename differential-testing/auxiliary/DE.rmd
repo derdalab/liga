@@ -20,11 +20,11 @@ knitr::opts_chunk$set(echo = TRUE)
 # This is a test script for DE analysis, the input data are table files
 # The output of this script is a set of pair-wise comparison tables, including original reads, logFoldChanges, pValue and adjusted-pValue
 library(edgeR)
-library(dplyr)
-library(tidyr)
+#library(dplyr)
+#library(tidyr)
 library(ggplot2)
 library(knitr)
-library(stringr)
+#library(stringr)
 ```
 
 ```{r getPrams, echo=TRUE}
@@ -138,40 +138,5 @@ finalTblAll[is.na(finalTblAll)] = 0
 write.table(finalTblAll, params$saveName,
             quote=FALSE, sep ="\t", row.names=FALSE)
 
-pdf(file = paste0(params$saveName, ".pdf"), width = 7, height = 7/1.618)
-
-bar_plot_data <- data.frame(Order = 1:NROW(finalTblAll$sequence), finalTblAll) %>%
-    gather(key = Case,  value = CPM, test_CPM:control_CPM) %>%
-    gather(key = Case2, value = SD, sd_test:sd_control)
-bar_plot_data$Case  <- sub("_CPM$", "", bar_plot_data$Case)
-bar_plot_data$Case2 <- sub("^sd_", "", bar_plot_data$Case2)
-
-bar_plot_data <- bar_plot_data[bar_plot_data$Case != bar_plot_data$Case2,
-                               c("Order", "sequence", "QValue", "Case", "CPM", "SD")]
-
-
-
-dodge <- position_dodge(width = 0.8)
-twin_bar <- ggplot(data = bar_plot_data,
-                  aes(x = reorder(sequence, Order), y = CPM, fill = Case)) +
-               theme_light() +
-               labs(x = "Glycan", y = "Counts Per Million") +
-               scale_y_sqrt() + #limits = c(0.31, 320)) +
-               geom_col(position = dodge, colour = "black", size = 0.5, width = 0.8) +
-               geom_errorbar(position = dodge, aes(ymin = CPM + SD, ymax = CPM + SD)) +
-               geom_linerange(position = dodge, aes(ymin = CPM, ymax = CPM + SD)) +
-               theme(axis.text.x  = element_text(size = 7, face = "bold", angle = 90, hjust = 1, vjust = 0.5),
-                     axis.text.y  = element_text(size = 7, face = "bold")) +
-               theme(legend.position = "top",
-                     legend.title = element_blank(), #element_text(size = 10),
-                     legend.text = element_text(size = 10),
-                     legend.key.size = unit(0.3, "cm")) +
-               scale_fill_manual(values = c("#444444", "#EEEEEE"))
-                     #labels = c("LiGA-60", "LiGA-75  "),
-                     #guide = guide_legend(reverse = TRUE))
-
-print(twin_bar)
-# end the PDF file generation
-dev.off()
 
 ```
