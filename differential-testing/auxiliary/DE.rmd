@@ -7,7 +7,7 @@ params:
 ---
 
 ---
-title: "DEA nalysis"
+title: "DE Analysis"
 output: html_document
 ---
 
