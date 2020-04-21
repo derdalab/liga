@@ -266,11 +266,11 @@ for(i in 1:length(input_filename_list)){
             file.copy(file.path(scriptDir,"auxiliary", saveName), scriptDir, overwrite = TRUE)
             file.remove(file.path(scriptDir,"auxiliary", saveName))
             #file.copy(file.path(scriptDir,"auxiliary/DE.html"), scriptDir, overwrite = TRUE)
-            file.remove(file.path(scriptDir,"auxiliary/DE.html"))
-            #tmp = try(file.rename("DE.html", htmlName), TRUE)
-            #if(inherits(tmp, "try-error")){
-            #        log = paste0(log, "\nWarning: DE in ", scriptDir, " failed!")
-            #}
+            #file.remove(file.path(scriptDir,"auxiliary/DE.html"))
+            tmp = try(file.rename("auxiliary/DE.html", htmlName), TRUE)
+            if(inherits(tmp, "try-error")){
+                    log = paste0(log, "\nWarning: DE in ", scriptDir, " failed!")
+            }
         }
     }
 }
