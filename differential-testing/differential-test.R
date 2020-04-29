@@ -255,10 +255,11 @@ for(i in 1:length(input_filename_list)){
             saveName = paste0("compare_", analysis_root, ".txt")
             htmlName = paste0("compare_", analysis_root, ".html")
         
+            # test and control seem backwards here, but this is to label the final outputs correctly
             render(file.path(scriptDir, "auxiliary/DE.rmd"),
                    params = list("TableName" = file.path("..", data_table_filename),
-                            "TestCols" = paste(test_columns, collapse = ","),
-                            "ControlCols" = paste(control_columns, collapse = ","),
+                            "TestCols" = paste(control_columns, collapse = ","),
+                            "ControlCols" = paste(test_columns, collapse = ","),
                             "saveName" = saveName))
             file.remove(data_table_filename)
             
