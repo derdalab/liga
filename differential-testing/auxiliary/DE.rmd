@@ -89,8 +89,8 @@ RG = DGEList(counts = counts, group = group)
 RG = calcNormFactors(RG)
 
 tmm_data <- cpm(RG, normalized.lib.sizes = TRUE)
-sd_test <- apply(tmm_data[,TestCols], 1, sd)
-sd_control <- apply(tmm_data[,ControlCols], 1, sd)
+sd_control <- apply(tmm_data[,TestCols], 1, sd)    # handle reversed inputs
+sd_test    <- apply(tmm_data[,ControlCols], 1, sd)
 
 design = model.matrix(~0+group, data = RG$samples)
 colnames(design) = colNamesDesign
