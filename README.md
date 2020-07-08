@@ -15,3 +15,7 @@ The folder contains Python scripts used to download and analyze CFG (Consortium 
 ### differential-testing
 
 Contains code to use edgeR to compare LiGA seqeunce abundances, including data for one example case.
+
+### process-fastq
+
+A collection of MatLab code to read sets of FastQ formatted files, and extract the LiGA sequences for each of the indices producing tables of sequence frequencies.
