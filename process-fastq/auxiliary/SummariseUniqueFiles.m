@@ -1,6 +1,6 @@
 % This script summarise all the unique files in the same folder
 function []=SummariseUniqueFiles(unidir, uniqueSummaryDir, sheetname);
-    fileList = dir(fullfile(unidir,[DATE '*.txt']));
+    fileList = dir(fullfile(unidir,[sheetname '*.txt']));
     fileList = struct2table(fileList);
     fileList = fileList.name;
     % extract unique files
