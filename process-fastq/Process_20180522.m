@@ -12,8 +12,12 @@
 clc;
 clear;
 addpath (genpath(pwd));
-AllLibraries  = './All classes of libraries';
-AllExcelFiles = './AllExcelFiles';
+% AllLibraries  = './All classes of libraries';
+% AllExcelFiles = './AllExcelFiles';
+
+AllLibraries  = fullfile(pwd,'All classes of libraries');
+AllExcelFiles = fullfile(pwd,'AllExcelFiles');
+
 %%% Initialisation of POI Libs
 % Add Java POI Libs to matlab javapath
 javaaddpath('poi_library/poi-3.8-20120326.jar');
@@ -35,7 +39,7 @@ xlsname = dir(fullfile(AllExcelFiles, '20180522.xlsx'));
 % This is the name of the excel sheet within the excel file.
 sheetname = '20180522';
 
-indir = './FastQfiles';  % directory where FASTQ.GZ files are
+indir = fullfile(pwd,'FastQfiles');  % directory where FASTQ.GZ files are
 
 
 % This is a list of all SDBs that have been defined by ID#.
@@ -83,9 +87,17 @@ rname = {'LiGA-example_R1.fastq.gz'...
 fname = {'LiGA-example_R2.fastq.gz'...
     };
 
-outdirTAB = './AllTableFiles/20180522'; % change to sequencing date
 
-uniqueSummaryDir = './UniqueSummary';
+outdirTAB = fullfile(pwd,'AllTableFiles', '20180522'); % change to sequencing date
+if ~isdir(outdirTAB)
+    mkdir(outdirTAB);
+end
+
+
+uniqueSummaryDir = fullfile(pwd,'UniqueSummary');
+if ~isdir(uniqueSummaryDir)
+    mkdir(uniqueSummaryDir);
+end
     
 % End of User defined section %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,13 +105,20 @@ uniqueSummaryDir = './UniqueSummary';
 %% Do not change anything below unless you know what you are doing  %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 
-AllBarFiles = './AllBarFiles';
-AllRAWFiles = './AllRAWFiles';
-unidir = './AllUniqueFiles';
-pardir = './AllParsedFiles';
-Statis = './Statis';
+% AllBarFiles = './AllBarFiles';
+% AllRAWFiles = './AllRAWFiles';
+% unidir = './AllUniqueFiles';
+% pardir = './AllParsedFiles';
+% Statis = './Statis';
 
-fprintf("Removing all the files from previous processing on this date...\n");
+AllBarFiles = fullfile(pwd,'AllBarFiles');
+AllRAWFiles = fullfile(pwd,'AllRAWFiles');
+unidir = fullfile(pwd,'AllUniqueFiles');
+pardir = fullfile(pwd,'AllParsedFiles');
+Statis = fullfile(pwd,'Statistics');
+
+
+fprintf('Removing all the files from previous processing on this date...\n');
 outname = ['*' sheetname '*'];
 folderList = {AllBarFiles; AllRAWFiles; unidir; pardir; Statis};
 for id=1:length(folderList)
