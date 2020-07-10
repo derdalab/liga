@@ -303,7 +303,7 @@ end
 
 Fstatis = fullfile(statis,[files(1:9) 'statistics.xlsx']);
 startRange = 'A1';
-xlwrite(Fstatis,num2cell(NumReads),'Sheet1',startRange);
+%xlwrite(Fstatis,num2cell(NumReads),'Sheet1',startRange);
 
 fclose('all');
 

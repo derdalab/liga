@@ -7,7 +7,7 @@ function []=SummariseUniqueFiles(unidir, uniqueSummaryDir, sheetname);
     pattern = '\d{8}-R\d+F\d+-\d+[A-Z]{2}[a-z]{2}[A-Z]{2}\d+-\d+[A-Z]{2}\d+.txt';
     fileList =regexp(fileList, pattern, 'match');
     
-    fprintf("summarising unique files...\n");
+    fprintf('summarising unique files...\n');
    
     if exist('summaryTbl')
         clear summaryTbl
