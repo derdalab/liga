@@ -20,6 +20,11 @@ Packages required:
 All script contained in currect folder and sub-folder(s) should be downloaded together. 
 Each R script generates a text table file containing the reads, CPM, standard deviation, LogFC, p-value, and q-value. 
 
+#### Instructions using this script
+```
+To run the script at the R command line enter: source("differential-test.R").
+Users of RStudio or Rapp can double click the "differential-test.R" file to open it and then click the "source" button within the window.
+
 
 ## Psuedocode
 The script progress through several steps.
