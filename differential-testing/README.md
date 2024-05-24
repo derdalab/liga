@@ -22,9 +22,8 @@ Each R script generates a text table file containing the reads, CPM, standard de
 
 
 ## Psuedocode
-`The script progress through several steps.
-For each campaign (description of the statistical comparison to be
-performed)
+The script progress through several steps.
+For each campaign (description of the statistical comparison to be performed)
    Read the campaign
    Read the dictionary and order tables in the campaign
    Read a table of pre-identified sequences and their corresponding LiGA SDBs
