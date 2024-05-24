@@ -22,9 +22,9 @@ Each R script generates a text table file containing the reads, CPM, standard de
 
 
 ## Psuedocode
-The script progress through several steps.
+`The script progress through several steps.
 For each campaign (description of the statistical comparison to be
-performed) file
+performed)
    Read the campaign
    Read the dictionary and order tables in the campaign
    Read a table of pre-identified sequences and their corresponding LiGA SDBs
@@ -36,7 +36,7 @@ performed) file
    Using TMM estimate the size (total number of reads) of each replicate
    Normalize the read counts the size
    Call the edgeR library to estimate the per SDB differential response: F-test, fold change, p-value
-   Estimate False Discovery Rates (q-values) from the list of p-values using Benjamini-Hochberg adjustment
+   Estimate False Discovery Rates (q-values) from the list of p-values using Benjamini-Hochberg adjustment`
    Output the combined read table to disk
    Output the edgeR stats to disk
    Output a plot of the fold changes
