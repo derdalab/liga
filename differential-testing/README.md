@@ -24,9 +24,10 @@ Each R script generates a text table file containing the reads, CPM, standard de
 ```
 To run the script at the R command line enter: source("differential-test.R").
 Users of RStudio or Rapp can double click the "differential-test.R" file to open it and then click the "source" button within the window.
-
+```
 
 ## Psuedocode
+```
 The script progress through several steps.
 For each campaign (description of the statistical comparison to be performed)
    Read the campaign
@@ -44,3 +45,4 @@ For each campaign (description of the statistical comparison to be performed)
    Output the combined read table to disk
    Output the edgeR stats to disk
    Output a plot of the fold changes
+```
