@@ -21,7 +21,7 @@ All script contained in currect folder and sub-folder(s) should be downloaded to
 Each R script generates a text table file containing the reads, CPM, standard deviation, LogFC, p-value, and q-value. 
 
 
-##Psuedocode
+## Psuedocode
 The script progress through several steps.
 For each campaign (description of the statistical comparison to be
 performed) file
