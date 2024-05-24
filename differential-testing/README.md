@@ -17,23 +17,26 @@ Packages required:
 ```
 
 ### Using the R Scripts:
+```
 All script contained in currect folder and sub-folder(s) should be downloaded together. 
 Each R script generates a text table file containing the reads, CPM, standard deviation, LogFC, p-value, and q-value. 
+```
 
 #### Instructions using this script
 ```
 To run the script at the R command line enter: source("differential-test.R").
 Users of RStudio or Rapp can double click the "differential-test.R" file to open it and then click the "source" button within the window.
+Typically, the script usually finished analysis within 3 min.
 ```
 
-## Psuedocode
+## Pseudocode
 ```
 The script progress through several steps.
 For each campaign (description of the statistical comparison to be performed)
    Read the campaign
    Read the dictionary and order tables in the campaign
    Read a table of pre-identified sequences and their corresponding LiGA SDBs
-   For each LiGA data file (sequences and read counts ) in the campaign
+   For each LiGA data file (sequences and read counts) in the campaign
        Read the file
        Convert the sequences into SDB names
        Sum the read counts for each SDB
